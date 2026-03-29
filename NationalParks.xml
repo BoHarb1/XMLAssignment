@@ -120,8 +120,20 @@
       <Street>Visitor Center Road</Street>
       <City>Bar Harbor</City>
       <State>ME</State>
-      <Zip>4609</Zip>
+      <Zip>04609</Zip>
     </Address>
   </NationalPark>
+
+  <NationalPark Rating="4.7" NearestAirport="Las Vegas">
+  <Name>Death Valley</Name>
+  <Phone>760-786-3200</Phone>
+  <Address>
+    <Number>1</Number>
+    <Street>Furnace Creek Rd</Street>
+    <City>Death Valley</City>
+    <State>CA</State>
+    <Zip>92328</Zip>
+  </Address>
+</NationalPark>
 
 </NationalParks>
