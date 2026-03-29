@@ -1,35 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  XML Schema for National Parks
+  Defines structure, constraints, and data types based on the assignment diagram.
+  - Root element: NationalParks
+  - Each park must contain Name, Phone(s), and Address
+  - Rating is optional, NearestAirport is required
+-->
+
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
            targetNamespace="http://tempuri.org/NationalParks"
            xmlns="http://tempuri.org/NationalParks"
            elementFormDefault="qualified">
 
+  <!-- Root element representing the collection of parks -->
   <xs:element name="NationalParks">
     <xs:complexType>
       <xs:sequence>
 
+        <!-- Each NationalPark must appear at least once -->
         <xs:element name="NationalPark" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
 
+              <!-- Name of the park -->
               <xs:element name="Name" type="xs:string"/>
+
+              <!-- One or more phone numbers -->
               <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
 
+              <!-- Address block -->
               <xs:element name="Address">
                 <xs:complexType>
                   <xs:sequence>
+
+                    <!-- Street number (integer value) -->
                     <xs:element name="Number" type="xs:int"/>
+
+                    <!-- Street name -->
                     <xs:element name="Street" type="xs:string"/>
+
+                    <!-- City name -->
                     <xs:element name="City" type="xs:string"/>
+
+                    <!-- State abbreviation -->
                     <xs:element name="State" type="xs:string"/>
+
+                    <!-- ZIP code -->
                     <xs:element name="Zip" type="xs:int"/>
+
                   </xs:sequence>
                 </xs:complexType>
               </xs:element>
 
             </xs:sequence>
 
+            <!-- Optional rating attribute -->
             <xs:attribute name="Rating" type="xs:string" use="optional"/>
+
+            <!-- Required nearest airport attribute -->
             <xs:attribute name="NearestAirport" type="xs:string" use="required"/>
 
           </xs:complexType>
