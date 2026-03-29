@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<!-- ERROR 1: Wrong root element name (should be NationalParks) -->
+<NationalPark>
+
+	<!-- ERROR 2: Missing required attribute NearestAirport -->
+	<NationalPark>
+		<Name>Grand Canyon</Name>
+		
+		<Phone>928-638-7496</Phone>
+
+		<Address>
+			<Number>8</Number>
+			<Street>S Entrance Road</Street>
+			<City>Grand Canyon</City>
+			<State>AZ</State>
+			<Zip>86023</Zip>
+			<!-- ERROR 4: Missing closing tag for Address -->
+		</NationalPark>
+
+	<!-- This park has correct attribute but will contain other errors -->
+	<NationalPark NearestAirport="Jackson Hole">
+
+		<!-- ERROR 5: Duplicate Name elements -->
+		<Name>Yellowstone</Name>
+		<Name>Duplicate Name</Name>
+
+		<!-- ERROR 3: Missing Phone element completely -->
+		<!-- No <Phone> here -->
+
+		<Address>
+			<Number>2</Number>
+			<Street>Main Street</Street>
+			<City>Yellowstone</City>
+			<State>WY</State>
+			<Zip>82190</Zip>
+		</Address>
+
+	</NationalPark>
+
+</NationalPark>
